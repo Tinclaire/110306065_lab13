@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style>
+		h1{
+			font-family: monospace;
+		}
+
+		.form{
+			text-align: center;
+			border-color: grey;
+			border-style: solid;
+			margin-left: 35%;
+			margin-right: 35%;
+			background-color: linen;
+		}
+		.input{
+			width: 145pt;
+		}
+
+		.select{
+			width: 150pt;
+		}
+
+		.button{
+			width: 150pt;
+			font-family: fantasy;
+			background-color: coral;
+			color: white;
+			font-size: 15pt;
+		}
+	</style>
+	
+</head>
+<body>
+	
+	<div id="block" class="form">
+		<h1>JS Calculator</h1>
+		<form>
+			<p><label>Number1</label><br>
+			<input id="number1" type="number" class="input"></p>
+			<p><label>Number2</label><br>
+			<input id="number2" type="number" class="input"></p>
+			<p><label>Operate way?</label><br>
+			<select id="operate" name="operateWay" class="select">
+				<option value="0">+</option>
+				<option value="1">-</option>
+				<option value="2">*</option>
+				<option value="3">/</option>
+			</select></p>
+		</form>
+		<input type="button" value="Start!" onclick="start()" class="button"></p>
+		<p>Result = <span id="result"></span></p>
+	</div>
+
+	<script type="text/javascript">
+		var num1;
+		var num2;
+		var operateWay;
+		num1 = parseInt(document.getElementById("number1").value);
+		num2 = parseInt(document.getElementById("number2").value);
+		operateWay = parseInt(document.getElementById("operate").value);
+
+		function start(){
+			var num1;
+			var num2;
+			var operateWay;
+			num1 = parseInt(document.getElementById("number1").value);
+			num2 = parseInt(document.getElementById("number2").value);
+			operateWay = parseInt(document.getElementById("operate").value);
+
+			if(operateWay == 0){
+				document.getElementById("result").innerHTML = plus(num1, num2);
+			}
+			if(operateWay == 1){
+				document.getElementById("result").innerHTML = minus(num1, num2);
+			}
+			if(operateWay == 2){
+				document.getElementById("result").innerHTML = mul(num1, num2);
+			}
+			if(operateWay == 3){
+				document.getElementById("result").innerHTML = div(num1, num2);
+			}
+		}
+
+		function plus(num1, num2){
+			return num1 + num2;
+		}
+		function minus(num1, num2){
+			return num1 - num2;
+		}
+		function mul(num1, num2){
+			return num1 * num2;
+		}
+		function div(num1, num2){
+			return num1 / num2;
+		}
+	</script>
+
+
+
+
+</body>
+</html>
